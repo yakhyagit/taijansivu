@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tilaukset — Töppötassut</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">Töppötassut</a>
+
+      <nav class="nav-links">
+        <a href="index.html#kirja">Esikoisteos</a>
+        <a href="index.html#kirjailija">Kirjailija</a>
+        <a href="index.html#lehdet">Lehdissä</a>
+        <a href="tilaukset.html" class="active-link">Tilaukset</a>
+      </nav>
+
+      <a href="login.html" class="login-btn">Kirjaudu</a>
+    </div>
+  </header>
+
+  <main class="container order-page">
+    <div class="order-grid">
+      <!-- Chap taraf: Kitob haqida ma'lumot -->
+      <div class="simple-box order-info">
+        <span class="tag">Tilaa kirja</span>
+        <h1>Töppötassut – Suuri seikkailu</h1>
+        <p class="lead">
+          Tilaa lämminhenkinen kuvitettu lastenkirja suoraan kotiin tai lahjaksi.
+          Halutessasi kirjaan voidaan kirjoittaa myös omistuskirjoitus.
+        </p>
+
+        <img
+          src="töppötassut_kansi.avif"
+          alt="Töppötassut - Suuri seikkailu"
+          class="order-book-img"
+        />
+
+        <ul class="order-details">
+          <li><strong>Kirjailija ja kuvittaja:</strong> Taija Ruuhijärvi</li>
+          <li><strong>Kieli:</strong> Suomi</li>
+          <li><strong>Toimitus:</strong> Postitus tai nouto Turusta</li>
+        </ul>
+      </div>
+
+      <!-- O'ng taraf: Zakaz formasi -->
+      <div class="simple-box">
+        <h2>Tilauslomake</h2>
+        <p class="hint">Täytä tietosi alle, niin otamme sinuun yhteyttä vahvistuksen kera.</p>
+
+        <div class="error" id="orderError"></div>
+
+        <div class="success-box" id="orderSuccess" hidden>
+          <h3>Kiitos tilauksestasi!</h3>
+          <p id="successText"></p>
+          <button type="button" class="login-btn" id="newOrderBtn">Tee uusi tilaus</button>
+        </div>
+
+        <form id="orderForm" novalidate>
+          <label for="fullName">Nimi *</label>
+          <input id="fullName" type="text" placeholder="Esim. Matti Meikäläinen" required />
+
+          <label for="email">Sähköposti *</label>
+          <input id="email" type="email" placeholder="matti@esimerkki.fi" required />
+
+          <label for="phone">Puhelinnumero *</label>
+          <input id="phone" type="tel" placeholder="040 123 4567" required />
+
+          <div class="form-row">
+            <div>
+              <label for="quantity">Kappalemäärä *</label>
+              <input id="quantity" type="number" min="1" max="50" value="1" required />
+            </div>
+
+            <div>
+              <label for="delivery">Toimitustapa</label>
+              <select id="delivery">
+                <option value="Postitus">Postitus kotiin</option>
+                <option value="Nouto Turusta">Nouto (Turku)</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="address">Toimitusosoite *</label>
+          <input id="address" type="text" placeholder="Katuosoite, postinumero ja kaupunki" required />
+
+          <label for="message">Lisätiedot / omistuskirjoitus (valinnainen)</label>
+          <textarea
+            id="message"
+            rows="3"
+            placeholder="Esim. Kenelle omistuskirjoitus kirjoitetaan?"
+          ></textarea>
+
+          <button type="submit" class="submit-btn" id="orderSubmitBtn">Lähetä tilaus</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="tilaukset.js"></script>
+</body>
+</html>

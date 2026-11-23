@@ -1,0 +1,486 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f7f4ee;
+  color: #1f2623;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Yläpalkki */
+.topbar {
+  border-bottom: 1px solid #e6e1d6;
+  background: #f7f4ee;
+}
+
+.topbar-inner {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  color: #5b6661;
+}
+
+.nav-links a:hover {
+  color: #1f2623;
+}
+
+.login-btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 10px;
+  background: #275d46;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #1e4937;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+  padding: 48px 0 36px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #275d46;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.lead {
+  font-size: 16px;
+  color: #5b6661;
+  max-width: 500px;
+  margin-bottom: 22px;
+}
+
+.banner-img {
+  border-radius: 14px;
+  border: 1px solid #e6e1d6;
+  background: #fff;
+  padding: 6px;
+  max-width: 460px;
+}
+
+/* Kirjakortti */
+.book-card {
+  background: #ffffff;
+  border: 1px solid #e6e1d6;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #275d46;
+  background: #eef4f0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.book-cover-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #faf8f4;
+  margin-bottom: 16px;
+}
+
+.book-card h2 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.book-card p {
+  font-size: 14px;
+  color: #5b6661;
+  margin-bottom: 14px;
+}
+
+.book-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #5b6661;
+  padding-top: 12px;
+  border-top: 1px solid #eee9df;
+}
+
+/* Kirjailija & Uutiset */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 44px;
+}
+
+.simple-box {
+  background: #ffffff;
+  border: 1px solid #e6e1d6;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.simple-box h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.simple-box p {
+  font-size: 14px;
+  color: #5b6661;
+}
+
+.news-box {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.news-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Lehdissä-galleria */
+.press-section {
+  padding-bottom: 64px;
+}
+
+.section-head {
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.section-head p {
+  font-size: 14px;
+  color: #5b6661;
+}
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.press-card {
+  background: #ffffff;
+  border: 1px solid #e6e1d6;
+  border-radius: 14px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.press-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Bosiladigan rasmlar */
+.zoom-img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.zoom-img:hover {
+  transform: scale(1.015);
+}
+
+/* Katta rasm oynasi (Lightbox) */
+.img-modal {
+  margin: auto;
+  border: none;
+  border-radius: 18px;
+  padding: 0;
+  width: min(92vw, 920px);
+  max-height: 90vh;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.img-modal::backdrop {
+  background: rgba(15, 20, 18, 0.72);
+  backdrop-filter: blur(3px);
+}
+
+.img-modal-box {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.img-modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid #e6e1d6;
+  background: #faf8f4;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2623;
+}
+
+.close-modal-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #dcd6c9;
+  border-radius: 9px;
+  background: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: #1f2623;
+}
+
+.close-modal-btn:hover {
+  background: #f0ece3;
+}
+
+.img-modal-body {
+  padding: 16px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f3efe6;
+}
+
+.img-modal-body img {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* Forma elementlari (Tilaukset & Login) */
+.hint {
+  font-size: 13px;
+  color: #5b6661;
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  color: #1f2623;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d5d0c5;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #ffffff;
+  color: #1f2623;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #275d46;
+}
+
+.error {
+  display: none;
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.error.show {
+  display: block;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #275d46;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #1e4937;
+}
+
+/* Tilaukset-sivu */
+.active-link {
+  color: #275d46;
+  font-weight: 700;
+}
+
+.order-page {
+  padding: 44px 24px 64px;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.order-info h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.order-book-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  background: #faf8f4;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.order-details {
+  list-style: none;
+  font-size: 14px;
+  color: #5b6661;
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #eee9df;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.success-box {
+  background: #eef6f1;
+  border: 1px solid #cbe3d4;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 12px;
+}
+
+.success-box h3 {
+  color: #275d46;
+  margin-bottom: 6px;
+}
+
+.success-box p {
+  font-size: 14px;
+  color: #1f2623;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .press-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .order-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .press-grid,
+  .news-box {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-img {
+    width: 100%;
+    height: 180px;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etusivu — Töppötassut</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#etusivu" class="brand">Töppötassut</a>
+
+      <nav class="nav-links">
+        <a href="#kirja">Esikoisteos</a>
+        <a href="#kirjailija">Kirjailija</a>
+        <a href="#lehdet">Lehdissä</a>
+        <a href="tilaukset.html">Tilaukset</a>
+      </nav>
+
+      <a href="login.html" class="login-btn">Kirjaudu</a>
+    </div>
+  </header>
+
+  <main id="etusivu" class="container">
+    <!-- Hero + Kitob muqovasi -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Lastenkirjallisuus • Turku</p>
+        <h1>Tarinoita ja kuvitusta täynnä lämpöä</h1>
+        <p class="lead">
+          Tervetuloa tutustumaan Taija Ruuhijärven lastenkirjamaailmaan.
+          Esikoisteos, kuulumiset ja lehtijutut selkeästi yhdessä paikassa.
+        </p>
+        <img
+          src="kuva1.avif"
+          alt="Töppötassut hahmot"
+          class="banner-img zoom-img"
+          data-caption="Töppötassut-hahmot"
+        />
+      </div>
+
+      <div class="book-card" id="kirja">
+        <span class="tag">Esikoisteos</span>
+        <img
+          src="töppötassut_kansi.avif"
+          alt="Töppötassut - Suuri seikkailu kansi"
+          class="book-cover-img zoom-img"
+          data-caption="Töppötassut – Suuri seikkailu (kansikuva)"
+        />
+        <h2>Töppötassut – Suuri seikkailu</h2>
+        <p>Kuvitettu lastenkirja täynnä mielikuvitusta ja pieniä suuria hetkiä.</p>
+        <div class="book-meta">
+          <span>Taija Ruuhijärvi</span>
+          <span>21.9.2023</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kirjailija ja Uutiset -->
+    <section class="grid-2">
+      <div class="simple-box" id="kirjailija">
+        <h3>Kuka minä olen?</h3>
+        <p>
+          Olen turkulainen esikoiskirjailija ja kuvittaja. Lapsena luin Pieni runotyttö -kirjan
+          ja päätin, että minusta tulee jonain päivänä kirjailija. Omien lasten ja kummilasten
+          vauva-aikojen lempinimestä syntyi lastenkirjani hahmo Töppötassut.
+        </p>
+      </div>
+
+      <div class="simple-box news-box">
+        <div>
+          <h3>Uutiset ja ajankohtaista</h3>
+          <p>
+            Töppötassut ilahduttaa pieniä ja suuria lukijoita. Seuraa tuoreimpia kuulumisia,
+            tapahtumia ja kirjatilauksia.
+          </p>
+        </div>
+        <img
+          src="kuva2.avif"
+          alt="Töppötassut uutinen"
+          class="news-img zoom-img"
+          data-caption="Uutisia ja kuulumisia"
+        />
+      </div>
+    </section>
+
+    <!-- Töppötassut lehdissä -galeriyasi -->
+    <section class="press-section" id="lehdet">
+      <div class="section-head">
+        <h2>Töppötassut lehdissä</h2>
+        <p>Klikkaa kuvaa avataksesi sen suurempana ja helpommin luettavana</p>
+      </div>
+
+      <div class="press-grid">
+        <figure class="press-card">
+          <img
+            src="kuva.avif"
+            alt="Lehtijuttu 1"
+            class="zoom-img"
+            data-caption="Lehtijuttu — Töppötassut"
+          />
+        </figure>
+        <figure class="press-card">
+          <img
+            src="kuva3.avif"
+            alt="Töppötassut tulevat synttäreillä"
+            class="zoom-img"
+            data-caption="Töppötassut tulevat synttäreillä"
+          />
+        </figure>
+        <figure class="press-card">
+          <img
+            src="toppis.avif"
+            alt="Turun Seutusanomat juttu"
+            class="zoom-img"
+            data-caption="Turun Seutusanomat — Töppötassut"
+          />
+        </figure>
+        <figure class="press-card">
+          <img
+            src="toppis2.avif"
+            alt="Lehtiartikkeli"
+            class="zoom-img"
+            data-caption="Lehtiartikkeli — Töppötassut"
+          />
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="img-modal" id="imgModal">
+    <div class="img-modal-box">
+      <div class="img-modal-top">
+        <span id="modalCaption">Kuva</span>
+        <button type="button" class="close-modal-btn" id="closeModalBtn" aria-label="Sulje">&times;</button>
+      </div>
+      <div class="img-modal-body">
+        <img id="modalImage" src="" alt="" />
+      </div>
+    </div>
+  </dialog>
+  <script src="index.js"></script>
+</body>
+</html>

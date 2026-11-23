@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kirjaudu — Töppötassut</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-page">
+    <form class="login-box" id="loginForm" novalidate>
+      <a href="index.html" class="back-link">&larr; Takaisin etusivulle</a>
+      <h1>Kirjaudu</h1>
+      <p class="hint">Testi: admin@example.com / 123456</p>
+
+      <div class="error" id="errorBox"></div>
+
+      <label for="email">Sähköposti</label>
+      <input id="email" type="email" placeholder="admin@example.com" required />
+
+      <label for="password">Salasana</label>
+      <div class="pass-wrap">
+        <input id="password" type="password" placeholder="••••••" required />
+        <button type="button" class="toggle" id="toggleBtn">Näytä</button>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Kirjaudu sisään</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const emailEl = document.getElementById("email");
+    const passEl = document.getElementById("password");
+    const errorBox = document.getElementById("errorBox");
+    const submitBtn = document.getElementById("submitBtn");
+    const toggleBtn = document.getElementById("toggleBtn");
+
+    toggleBtn.onclick = () => {
+      const isPass = passEl.type === "password";
+      passEl.type = isPass ? "text" : "password";
+      toggleBtn.textContent = isPass ? "Piilota" : "Näytä";
+    };
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      errorBox.classList.remove("show");
+
+      const email = emailEl.value.trim();
+      const password = passEl.value;
+
+      if (!email || !password) {
+        errorBox.textContent = "Täytä sähköposti ja salasana.";
+        errorBox.classList.add("show");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Kirjaudutaan...";
+
+      try {
+        const res = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.ok) {
+          errorBox.textContent = data.message || "Kirjautuminen epäonnistui.";
+          errorBox.classList.add("show");
+          return;
+        }
+
+        window.location.href = data.redirect;
+      } catch {
+        errorBox.textContent = "Yhteysvirhe.";
+        errorBox.classList.add("show");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Kirjaudu sisään";
+      }
+    };
+  </script>
+</body>
+</html>
